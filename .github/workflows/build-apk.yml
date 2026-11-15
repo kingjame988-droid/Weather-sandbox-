@@ -28,6 +28,9 @@ jobs:
       - name: Extract project
         run: unzip -q WeatherSandbox-Android-Project.zip -d project
 
+      - name: Enable AndroidX
+        run: echo "android.useAndroidX=true" >> project/gradle.properties
+        
       - name: Build APK
         run: cd project && gradle assembleDebug
 
